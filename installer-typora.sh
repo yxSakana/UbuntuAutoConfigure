@@ -4,13 +4,12 @@
 
 echo "typora installing..."
 
-typora_file_path=$1
-
 # install rar unrar
 sudo apt install rar unrar
 # unrar
+git clone https://github.com/yxVision/typora_1.2.4_Linux.git
 mkdir typora
-unrar e "${typora_file_path}" -d typora
+unrar e "typora_1.2.4_Linux" -d typora
 # install
 sudo dpkg -i typora/typora_1.2.4_amd64.deb
 # replace asar
