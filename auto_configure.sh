@@ -5,8 +5,8 @@
 . installer-python.sh
 . time-synchronization.sh
 . installer-typora.sh
+. installer-qt_opencv-depend.sh
 
-chmod +x installer-qt_opencv-depend.sh
 chmod +x compile_install.sh
 
 echo "finished!"
