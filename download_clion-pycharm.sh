@@ -10,18 +10,18 @@ mkdir -p "${download_dir}"
 
 echo "clion downloading..."
 
-wget -O "${download_dir}/clion-2023.1.3.tar.gz" "${clion_url}"
-wget -O "${download_dir}/pycharm-2023.1.2.tar.gz" "${pycharm_url}"
+wget -O "${download_dir}/clion-${clion_vision}.tar.gz" "${clion_url}"
+wget -O "${download_dir}/pycharm-${pycharm_vision}.tar.gz" "${pycharm_url}"
 
 echo "Download finished!"
 
-tar -xzvf "${download_dir}/clion-2023.1.3.tar.gz"
-tar -xzvf "${download_dir}/pycharm-2023.1.2.tar.gz"
+tar -xzvf "${download_dir}/clion-${clion_vision}.tar.gz"
+tar -xzvf "${download_dir}/pycharm-${pycharm_vision}.tar.gz"
 
-sudo mv "${download_dir}/clion-2023.1.3" /opt/
+sudo mv "${download_dir}/clion-${clion_vision}" /opt/
 sudo mv "${download_dir}/pycharm-2023.1.3" /opt/
 
-echo "export PATH=/opt/clion-2023.1.3/bin${PATH:+:${PATH}}" > ~/.bashrc
-echo "export PATH=/opt/clion-2023.1.3/bin${PATH:+:${PATH}}" > ~/.bashrc
+echo "export PATH=/opt/clion-${clion_vision}/bin\${PATH:+:\${PATH}}" > ~/.bashrc
+echo "export PATH=/opt/pycharm-${pycharm_vision}/bin\${PATH:+:\${PATH}}" > ~/.bashrc
 
 rm -rf ${download_dir}
