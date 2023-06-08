@@ -6,6 +6,7 @@
 . time-synchronization.sh
 . installer-typora.sh
 . installer-qt_opencv-depend.sh
+. download_clion-pycharm.sh
 
 chmod +x compile_install.sh
 
