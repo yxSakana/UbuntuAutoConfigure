@@ -2,6 +2,7 @@
 # @brief: 自动配置Ubuntu环境
 
 . installer-init.sh
+. download-google-chrome.sh
 . installer-python.sh
 . time-synchronization.sh
 . installer-typora.sh
