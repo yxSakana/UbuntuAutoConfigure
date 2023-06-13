@@ -13,11 +13,12 @@ sudo apt install -y \
                     cmake-gui \
                     g++ \
                     gcc \
-		                python3-pip \
-		                zip \
-		                unzip \
-		                rar \
-		                unrar \
-		                tree
-
+		    python3-pip \
+		    zip \
+		    unzip \
+		    rar \
+		    unrar \
+		    tree \
+      		    wget
+	    
 echo "necessary depend finished!"
