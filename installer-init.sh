@@ -13,13 +13,13 @@ sudo apt install -y \
                     cmake-gui \
                     g++ \
                     gcc \
-		                python3-pip \
-		                zip \
-		                unzip \
-		                rar \
-		                unrar \
-		                tree \
-		                wget
+		    python3-pip \
+                    zip \
+                    unzip \
+                    rar \
+                    unrar \
+                    tree \
+                    wget
 
 wget -O ~/Downloads/google-chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 sudo dpkg -i ~/Downloads/google-chrome.deb

@@ -5,7 +5,7 @@
 echo "typora installing..."
 
 # install rar unrar
-sudo apt install rar unrar
+sudo apt install -y rar unrar
 # unrar
 git clone https://github.com/yxVision/typora_1.2.4_Linux.git
 mkdir typora
