@@ -5,7 +5,7 @@ compileRealsense() {
   echo "realsense compiling..."
   # depend
   sudo apt update && sudo apt upgrade
-  sudo apt install git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
+  sudo apt install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
 
   # compile
   git clone https://github.com/IntelRealSense/librealsense.git
@@ -36,29 +36,9 @@ compileSpdlog() {
   echo "spdlog compiled!"
 }
 
-compileKdrobotcpplibs() {
-  echo "kdrobotcpplibs compiling..."
+echo "realsense && spdlog compile installing"
 
-  cd kdrobotcpplibs || (echo "kdrobotcpplibs not fond" && exit)
-  mkdir build && cd build || (echo "build not fond" && exit)
-  cmake ..
-  sudo make install
-
-  cd ../..
-  echo "kdrobotcpplibs compiled!"
-}
-
-if (($# == 2))
-then
-  echo "realsense && spdlog && Kdrobotlibs compile installing"
-  compileRealsense
-  compileSpdlog
-  compileKdrobotcpplibs
-else
-  echo "realsense && spdlog compile installing"
-
-  compileRealsense
-  compileSpdlog
-fi
+compileRealsense
+compileSpdlog
 
 echo "compile finished!"

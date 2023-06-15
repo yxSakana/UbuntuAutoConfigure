@@ -4,7 +4,6 @@
 . installer-init.sh
 . installer-python.sh
 . time-synchronization.sh
-. installer-typora.sh
 . installer-qt_opencv-depend.sh
 . download_clion-pycharm.sh
 

@@ -18,6 +18,11 @@ sudo apt install -y \
 		                unzip \
 		                rar \
 		                unrar \
-		                tree
+		                tree \
+		                wget
+
+wget -O ~/Downloads/google-chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+sudo dpkg -i ~/Downloads/google-chrome.deb
+rm ~/Downloads/google-chrome.deb
 
 echo "necessary depend finished!"
