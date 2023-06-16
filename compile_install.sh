@@ -20,6 +20,8 @@ compileRealsense() {
   sudo udevadm control --reload-rules && udevadm trigger
 
   cd ../..
+  rm -rf librealsense
+
   echo "realsense compiled!"
 }
 
@@ -33,6 +35,8 @@ compileSpdlog() {
   sudo make install
 
   cd ../..
+  rm -rf spdlog
+
   echo "spdlog compiled!"
 }
 
