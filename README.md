@@ -9,12 +9,13 @@ chmod +x auto_configure.sh
 
 ## 2. auto_configure.sh 脚本可以完成
 
-1. 下载必要依赖(git cmake g++等)并且会自动安装google chrome
-2. 下载python依赖
-3. 双系统时间同步
-4. Qt && opencv 依赖
-5. 下载Clion && Pycharm
-6. 在所有命令执行完成之后会进行重启`reboot`
+1. 下载必要依赖(git cmake g++等)
+2. 自动安装google chrome
+3. 下载python依赖
+4. 双系统时间同步
+5. Qt && opencv 依赖
+6. 下载Clion && Pycharm
+7. 在所有命令执行完成之后会进行重启`reboot`
 
 ## 3. 其余脚本
 
