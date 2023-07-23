@@ -2,7 +2,7 @@
 # @brief: install qt && opencv depend
 # @time: 2023-6-7 13:00
 
-ehco "qt && opencv depend installing..."
+echo "qt && opencv depend installing..."
 
 sudo apt update
 sudo apt install -y \
