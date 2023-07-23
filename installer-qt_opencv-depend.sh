@@ -31,7 +31,7 @@ sudo apt install -y \
                     pkg-config \
                     libxcb*
 sudo apt install -y python3-pip
-sudo -H pip3 install -y Cython -i https://pypi.tuna.tsinghua.edu.cn/simple
-sudo -H pip3 install -y numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
+sudo -H pip3 install Cython -i https://pypi.tuna.tsinghua.edu.cn/simple
+sudo -H pip3 install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 echo "qt && opencv depend finished!"
