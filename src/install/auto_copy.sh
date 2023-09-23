@@ -1,4 +1,7 @@
 #!/bin/bash
+
+. ../utils/color_config.sh
+
 if [ ! -e ~/Downloads/Vision/ ]
 then
   mkdir -p ~/Downloads/Vision/
@@ -7,7 +10,7 @@ fi
 # kdrobotlibs
 if [ ! -e ~/Downloads/Vision/kdrobotcpplibs ]
 then
-  echo "kdrobotcpplibs copying" && cp -r kdrobotcpplibs ~/Downloads/Vision/
+  green "kdrobotcpplibs copying" && cp -r kdrobotcpplibs ~/Downloads/Vision/
 fi
 # opencv
 if [ ! -e ~/Downloads/Vision/opencv/ ]
@@ -17,17 +20,17 @@ fi
 
 if [ ! -e ~/Downloads/Vision/opencv/opencv-4.5.0.zip ]
 then
-  echo "opencv copying" && cp OpenCV/opencv-4.5.0.zip ~/Downloads/Vision/opencv
+  green "opencv copying" && cp OpenCV/opencv-4.5.0.zip ~/Downloads/Vision/opencv
 fi
 
 if [ ! -e ~/Downloads/Vision/opencv/opencv_contrib-4.5.0.tar.gz ]
 then
-  echo "opencv_contrib copying" && cp OpenCV/opencv_contrib-4.5.0.tar.gz ~/Downloads/Vision/opencv
+  green "opencv_contrib copying" && cp OpenCV/opencv_contrib-4.5.0.tar.gz ~/Downloads/Vision/opencv
 fi
 # typora
 if [ ! -e ~/Downloads/Vision/typora1.2.4_Linux.rar ]
 then
-  echo "typora copying" && cp typora/typora1.2.4_Linux.rar ~/Downloads/Vision/
+  green "typora copying" && cp typora/typora1.2.4_Linux.rar ~/Downloads/Vision/
 fi
 
 cd ~/Downloads/Vision/opencv

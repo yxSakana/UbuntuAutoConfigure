@@ -2,6 +2,8 @@
 # @brief: install typora
 # @time: 2023-6-7 13:00
 
+. ../utils/color_config.sh
+
 echo "typora installing..."
 
 # install rar unrar
