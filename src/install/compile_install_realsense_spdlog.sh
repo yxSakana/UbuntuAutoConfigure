@@ -1,16 +1,18 @@
 #!/bin/bash
 # @brief: realsense && spdlog && Kdrobotlibs
 
+. ../utils/color_config.sh
+
 compileRealsense() {
-  echo "realsense compiling..."
+  green "realsense compiling..."
   # depend
   sudo apt update && sudo apt upgrade -y
   sudo apt install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
 
   # compile
   git clone https://github.com/IntelRealSense/librealsense.git
-  cd librealsense || (echo "librealsense not fond" && exit)
-  mkdir build && cd build || (echo "build not fond" && exit)
+  cd librealsense || (red "librealsense not fond" && exit)
+  mkdir build && cd build || (red "build not fond" && exit)
   cmake .. -DBUILD_EXAMPLES=true
   make -j8
   sudo make install
@@ -22,11 +24,11 @@ compileRealsense() {
   cd ../..
   rm -rf librealsense
 
-  echo "realsense compiled!"
+  green "realsense compiled!"
 }
 
 compileSpdlog() {
-  echo "spdlog compiling..."
+  green "spdlog compiling..."
 
   git clone https://github.com/gabime/spdlog.git
   cd spdlog || (echo "spdlog not fond" && exit)
@@ -37,12 +39,12 @@ compileSpdlog() {
   cd ../..
   rm -rf spdlog
 
-  echo "spdlog compiled!"
+  green "spdlog compiled!"
 }
 
-echo "realsense && spdlog compile installing"
+green "realsense && spdlog compile installing"
 
 compileRealsense
 compileSpdlog
 
-echo "compile finished!"
+green "compile finished!"

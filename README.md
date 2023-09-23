@@ -3,6 +3,7 @@
 ## 1. 运行auto_configure.sh即可
 
 ```shell
+cd src
 chmod +x auto_configure.sh
 ./auto_configure.sh
 ```

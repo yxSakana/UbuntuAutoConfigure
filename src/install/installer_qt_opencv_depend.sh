@@ -2,7 +2,9 @@
 # @brief: install qt && opencv depend
 # @time: 2023-6-7 13:00
 
-echo "qt && opencv depend installing..."
+. ../utils/color_config.sh
+
+green "qt && opencv depend installing..."
 
 sudo apt update
 sudo apt install -y \
@@ -34,4 +36,4 @@ sudo apt install -y python3-pip
 sudo -H pip3 install Cython -i https://pypi.tuna.tsinghua.edu.cn/simple
 sudo -H pip3 install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-echo "qt && opencv depend finished!"
+green "qt && opencv depend finished!"

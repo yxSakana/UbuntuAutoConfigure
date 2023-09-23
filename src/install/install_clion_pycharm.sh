@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ../utils/color_config.sh
+
 clion_vision="2023.1.3"
 pycharm_vision="2023.1.2"
 clion_url="https://download.jetbrains.com/cpp/CLion-${clion_vision}.tar.gz"
@@ -8,7 +10,7 @@ pycharm_url="https://download.jetbrains.com/python/pycharm-professional-${pychar
 download_dir="_tmp"
 mkdir -p "${download_dir}"
 
-echo "clion downloading..."
+green "clion downloading..."
 
 if [ ! -e "${download_dir}/clion-${clion_vision}.tar.gz" ]
 then
@@ -19,7 +21,8 @@ then
    wget -O "${download_dir}/pycharm-${pycharm_vision}.tar.gz" "${pycharm_url}"
 fi
 
-echo "Download finished!"
+green "Download finished!"
+green "tar -xzvf ..."
 
 tar -xzvf "${download_dir}/clion-${clion_vision}.tar.gz"
 tar -xzvf "${download_dir}/pycharm-${pycharm_vision}.tar.gz"
