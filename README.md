@@ -22,6 +22,6 @@ chmod +x auto_configure.sh
 
 `auto-copy.sh` 自动复制U盘中的文件，包括kdrobotcpplibs opencv typora 并解压, 会自动安装typora
 
-`compile_install.sh` 编译安装 Realsense && Spdlog
+`compile_install_realsense_spdlog.sh` 编译安装 Realsense && Spdlog
 
-`compile-install-kdrobotcpplibs.sh` 提供第二个参数-->队库路径 编译安装 KdrobotCppLibs
+`compile_install_kdrobotcpplibs.sh` 提供第二个参数-->队库路径 编译安装 KdrobotCppLibs
