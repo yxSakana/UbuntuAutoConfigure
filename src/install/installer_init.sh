@@ -2,7 +2,7 @@
 # @brief: install necessary depend
 # @time: 2023-6-7 13:00
 
-. ../utils/auto_configure.sh
+. ../utils/color_config.sh
 
 green "necessary depend installing..."
 green "(正在下载必要依赖...)"
