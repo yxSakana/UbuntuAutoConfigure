@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../utils/color_config.sh
+. script/color_config.sh
 
 compileKdrobotcpplibs() {
   green "kdrobotcpplibs compiling..."
@@ -8,7 +8,7 @@ compileKdrobotcpplibs() {
   cd "$1" || (red "kdrobotcpplibs not fond" && exit)
   mkdir build && cd build || (red "build not fond" && exit)
   cmake ..
-  sudo make install -j8
+  echo %{PWD} | sudo -S make install -j$(nproc)
 
   cd ../../
   rm -rf $1

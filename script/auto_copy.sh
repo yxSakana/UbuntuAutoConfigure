@@ -46,8 +46,8 @@ fi
 unrar e "typora1.2.4_Linux.rar" -d typora
 cd typora
 # install
-sudo dpkg -i typora_1.2.4_amd64.deb
+echo %{PWD} | sudo -S dpkg -i typora_1.2.4_amd64.deb
 # replace asar
-sudo cp app.asar /usr/share/typora/resources && cd ..
+echo %{PWD} | sudo -S cp app.asar /usr/share/typora/resources && cd ..
 # rm tmp
 rm -rf typora

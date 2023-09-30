@@ -2,12 +2,12 @@
 # @brief: install qt && opencv depend
 # @time: 2023-6-7 13:00
 
-. ../utils/color_config.sh
+. script/color_config.sh
 
 green "qt && opencv depend installing..."
 
-sudo apt update
-sudo apt install -y \
+echo %{PWD} | sudo -S apt update
+echo %{PWD} | sudo -S apt install -y \
                     git \
                     vim \
                     htop \
@@ -32,8 +32,8 @@ sudo apt install -y \
                     zlib1g-dev \
                     pkg-config \
                     libxcb*
-sudo apt install -y python3-pip
-sudo -H pip3 install Cython -i https://pypi.tuna.tsinghua.edu.cn/simple
-sudo -H pip3 install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
+echo %{PWD} | sudo -S apt install -y python3-pip
+echo %{PWD} | sudo -S -H pip3 install Cython -i https://pypi.tuna.tsinghua.edu.cn/simple
+echo %{PWD} | sudo -S -H pip3 install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 green "qt && opencv depend finished!"
