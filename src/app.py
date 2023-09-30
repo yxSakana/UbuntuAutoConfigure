@@ -16,8 +16,3 @@ import subprocess
 if __name__ == "__main__":
     ui = AutoConfigUi()
     ui.root.mainloop()
-
-    try:
-        subprocess.run("rm -rf run")
-    except FileNotFoundError:
-        pass
