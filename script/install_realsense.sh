@@ -15,15 +15,18 @@ if (( $# == 1 ))
 then
   dir_path=$1
 else
-  git clone ${proxy_url}https://github.com/IntelRealSense/librealsense.git
+  cd package
+    if [ ! -e librealsense ]; then
+      git clone ${proxy_url}https://github.com/IntelRealSense/librealsense.git
+    fi
   dir_path="librealsense"
 fi
 
-cd dir_path || (red "librealsense not fond" && exit)
+cd $dir_path || (red "librealsense not fond" && exit)
 mkdir build && cd build || (red "build not fond" && exit)
 
-cmake .. -DBUILD_EXAMPLES=true && make -j$(nproc) && echo %{PWD} | sudo -S make install -j$(nproc) && \
+cmake -B build -DBUILD_EXAMPLES=true && cmake --build build -j$(nproc) && echo %{PWD} | sudo -S cmake --build build --target install -j$(nproc) && \
 echo %{PWD} | sudo -S cp ../config/99-realsense-libusb.rules /etc/udev/rules.d/ && \
 echo %{PWD} | sudo -S udevadm control --reload-rules && udevadm trigger && \
-cd ../.. && rm -rf librealsense && \
-green "realsense compiled!"
+cd ../ && rm -rf librealsense && \
+green "realsense compiled!" || red "Failed: realsense compile"

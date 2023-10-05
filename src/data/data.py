@@ -11,7 +11,6 @@
 NEED_FILE_PATH = ["Realsense", "spdlog", "kdrobotcpplibs"]
 
 MUST_NEED_FILE_PATH = ["kdrobotcpplibs"]
-
 OPTION_MAP_CMD = {
     "x86_64": {
         "necessary depend": "run/installer_init.sh",
@@ -21,8 +20,9 @@ OPTION_MAP_CMD = {
         "Qt&OpenCV depend": "run/installer_qt_opencv_depend.sh",
         "Clion": "run/install_clion.sh",
         "PyCharm": "run/install_pycharm.sh",
-        "Realsense": "run/install_realsense.sh",
         "spdlog": "run/install_spdlog.sh",
+        "Realsense": "run/install_realsense.sh",
+        "OpenCV": "run/install_opencv_package.sh",
         "kdrobotcpplibs": "run/install_kdrobotcpplibs.sh",
         "reboot": "reboot"
     },
@@ -33,9 +33,11 @@ OPTION_MAP_CMD = {
         "Qt(aarch)": "run/install_aarch_qt.sh",
         "Clion": "run/install_clion.sh",
         "PyCharm": "run/install_pycharm.sh",
-        "Realsense": "run/install_realsense.sh",
         "spdlog": "run/install_spdlog.sh",
+        "Realsense": "run/install_realsense.sh",
+        "OpenCV": "run/install_opencv_package.sh",
         "kdrobotcpplibs": "run/install_kdrobotcpplibs.sh",
         "reboot": "reboot"
     }
 }
+

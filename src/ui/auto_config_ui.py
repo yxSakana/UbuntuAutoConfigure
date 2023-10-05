@@ -21,6 +21,7 @@ import sys
 import platform
 import subprocess
 import tkinter as tk
+import tkinter.messagebox
 from typing import Sequence, List
 
 from data.data import *
@@ -31,6 +32,7 @@ from ui.select_path_widget import SelectPathWidget
 
 class AutoConfigUi(object):
     def __init__(self):
+        AutoConfigUi.mkdir("run", "package")  # 创建必须目录
         self.architecture = platform.machine()
 
         try:
@@ -109,18 +111,17 @@ class AutoConfigUi(object):
                 cmds.append(OPTION_MAP_CMD[self.architecture][checkbutton.objName()].format(pwd=pwd))
 
         # 为所有文件添加密码
-        try:
-            os.mkdir("run")
-        except FileExistsError:
-            pass
+
 
         script_files = os.listdir("script/")
         for script_file in script_files:
-            with open("script/" + script_file, "r") as file:
-                content = file.read()
-            content = re.sub("echo %\\{PWD}", f"echo {pwd}", content)
-            with open("run/" + script_file, "w") as file:
-                file.write(content)
+            if os.path.isfile("script/" + script_file):
+                with open("script/" + script_file, "r") as file:
+                    content = file.read()
+                content = re.sub("echo %\\{PWD}", f"echo {pwd}", content)
+                with open("run/" + script_file, "w") as file:
+                    file.write(content)
+
         subprocess.run("chmod +x run/*", shell=True)
 
         # 执行命令 / 将命令写入文件
@@ -128,7 +129,6 @@ class AutoConfigUi(object):
             # run cmd
             for cmd in cmds:
                 subprocess.run(cmd, shell=True)
-
             try:
                 subprocess.run("rm -rf run", shell=True)
             except FileNotFoundError:
@@ -142,6 +142,15 @@ class AutoConfigUi(object):
                     else:
                         file.write(cmd + "\n")
             subprocess.run("chmod +x auto_config.sh", shell=True)
+            tkinter.messagebox.showinfo("完成!")
+
+    @staticmethod
+    def mkdir(*dirs):
+        for d in dirs:
+            try:
+                os.mkdir(d)
+            except FileExistsError:
+                pass
 
 
 if __name__ == "__main__":

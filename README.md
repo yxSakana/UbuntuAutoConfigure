@@ -13,6 +13,7 @@ Ubuntu 自动化环境配置
   - 下载 `PyCharm`
   - 安装 `Realsense`
   - 安装 `spdlog`
+  - 下载 `OpenCV` 包 (自动调换代理)
   - 安装 `KdrobotCppLibs`
   - 安装完成后是否重启
 - aarch
@@ -24,6 +25,7 @@ Ubuntu 自动化环境配置
     - 安装 `PyCharm`
     - 安装 `Realsense`
     - 安装 `spdlog`
+    - 下载 `OpenCV` 包 (自动调换代理)
     - 安装 `KdrobotCppLibs`
     - 安装完成后是否重启
 
@@ -42,3 +44,16 @@ python3 src/app.py
 # 关于可扩展性
 
 只需要在 `src/data/data.py` 中的字典中添加对应 `key-value` 即可
+
+# 安装完成后的测试
+
+```shell
+chmod +x script/compile/*.sh
+
+script/compile/test.sh  # test for all
+script/compile/test_spdlog.sh  # test for spdlog
+script/compile/test_realsense2.sh  # test for realsense2
+script/compile/test_qt.sh  # test for qt
+script/compile/test_opencv.sh  # test for opencv
+script/compile/test_kdlib.sh  # test for KdRobotCppLibs
+```
