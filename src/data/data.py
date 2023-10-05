@@ -26,7 +26,7 @@ OPTION_MAP_CMD = {
         "kdrobotcpplibs": "run/install_kdrobotcpplibs.sh",
         "reboot": "reboot"
     },
-    "aarch": {
+    "aarch64": {
         "necessary depend": "run/installer_init.sh",
         "python depend": "run/installer_python.sh",
         "Qt&OpenCV depend": "run/installer_qt_opencv_depend.sh",
