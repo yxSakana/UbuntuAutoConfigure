@@ -3,15 +3,18 @@
 
 . script/color_config.sh
 
+proxy_url="https://ghproxy.com/"
+
 green "spdlog compiling..."
 
 if (( $# == 1 ))
 then
   dir_path=$1
 else
+  git clone ${proxy_url}https://github.com/gabime/spdlog.git
   dir_path="spdlog"
-  git clone https://github.com/gabime/spdlog.git
 fi
+
 cd dir_path || (echo "spdlog not fond" && exit)
 mkdir build && cd build || (echo "build not fond" && exit)
 cmake ..

@@ -3,12 +3,7 @@
 
 . script/color_config.sh
 
-if (( $# == 1 ))
-then
-  dir_path=$1
-else
-  dir_path="librealsense"
-fi
+proxy_url="https://ghproxy.com/"
 
 green "realsense compiling..."
 # depend
@@ -16,10 +11,14 @@ echo %{PWD} | sudo -S apt update
 echo %{PWD} | sudo -S apt install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
 
 # compile
-if (( $dir_path == "librealsense" ))
+if (( $# == 1 ))
 then
-  git clone https://github.com/IntelRealSense/librealsense.git
+  dir_path=$1
+else
+  git clone ${proxy_url}https://github.com/IntelRealSense/librealsense.git
+  dir_path="librealsense"
 fi
+
 cd dir_path || (red "librealsense not fond" && exit)
 mkdir build && cd build || (red "build not fond" && exit)
 
