@@ -4,6 +4,7 @@
 . script/color_config.sh
 
 proxy_url="https://ghproxy.com/"
+current_dir=$PWD
 
 green "spdlog compiling..."
 
@@ -23,3 +24,5 @@ cd $dir_path || (echo "spdlog not fond" && exit)
 cmake -B build && cmake --build build -j$(nproc) && echo %{PWD} | sudo -S cmake --build build --target install -j$(nproc) && \
 cd ../ && rm -rf spdlog && \
 green "spdlog compiled!" || red "Failed: spdlog compie"
+
+cd ${current_dir}

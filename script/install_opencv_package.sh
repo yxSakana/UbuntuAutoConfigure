@@ -3,6 +3,7 @@
 . script/color_config.sh
 
 proxy_url="https://ghproxy.com/"
+current_dir=$PWD
 is_has_opencv="False"
 is_has_opencv_contrib="False"
 
@@ -28,3 +29,5 @@ if [ $is_has_opencv == "True" ] && [ $is_has_opencv_contrib == "True" ]; then
 else
   red "OpenCV Download Failed!(文件异常)"
 fi
+
+cd ${current_dir}
