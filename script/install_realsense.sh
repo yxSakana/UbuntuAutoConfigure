@@ -26,7 +26,7 @@ fi
 cd $dir_path || (red "librealsense not fond" && exit)
 
 cmake -B build -DBUILD_EXAMPLES=true && cmake --build build -j$(nproc) && echo %{PWD} | sudo -S cmake --build build --target install -j$(nproc) && \
-echo %{PWD} | sudo -S cp ../config/99-realsense-libusb.rules /etc/udev/rules.d/ && \
+echo %{PWD} | sudo -S cp config/99-realsense-libusb.rules /etc/udev/rules.d/ && \
 echo %{PWD} | sudo -S udevadm control --reload-rules && udevadm trigger && \
 cd ../ && rm -rf librealsense && \
 green "realsense compiled!" || red "Failed: realsense compile"
