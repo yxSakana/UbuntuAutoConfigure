@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ ! -v __COLOR_CONFIG_SH__ ]; then
+  __COLOR_CONFIG_SH__="__COLOR_CONFIG_SH__"
   # define color
   readonly COLOR_RED='\033[31m'
   readonly COLOR_GREEN='\033[32m'
