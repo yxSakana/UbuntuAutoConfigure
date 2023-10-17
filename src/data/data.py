@@ -24,6 +24,13 @@ OPTION_MAP_CMD = {
         "Realsense": "run/install_realsense.sh",
         "OpenCV": "run/install_opencv_package.sh",
         "kdrobotcpplibs": "run/install_kdrobotcpplibs.sh",
+        "OpenVINO": "run/install_openvino.sh",
+        "fmt": "run/install_fmt.sh",
+        "glog": "run/install_glog.sh",
+        "gtest": "run/install_gtest.sh",
+        "matplotlib-cpp": "run/install_matplotlib.sh",
+        "yaml-cpp": "run/install_yaml_cpp.sh",
+        "ceres_solver": "run/install_ceres_solver.sh",
         "reboot": "reboot"
     },
     "aarch64": {
@@ -37,6 +44,13 @@ OPTION_MAP_CMD = {
         "Realsense": "run/install_realsense.sh",
         "OpenCV": "run/install_opencv_package.sh",
         "kdrobotcpplibs": "run/install_kdrobotcpplibs.sh",
+        "OpenVINO": "run/install_openvino.sh",
+        "fmt": "run/install_fmt.sh",
+        "glog": "run/install_glog.sh",
+        "gtest": "run/install_gtest.sh",
+        "matplotlib-cpp": "run/install_matplotlib.sh",
+        "yaml-cpp": "run/install_yaml_cpp.sh",
+        "ceres_solver": "run/install_ceres_solver.sh",
         "reboot": "reboot"
     }
 }
