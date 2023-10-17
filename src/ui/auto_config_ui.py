@@ -47,7 +47,7 @@ class AutoConfigUi(object):
 
         self.root: tk.Tk = tk.Tk()
         self.root.title("Linux Auto Config(Vision)")
-        self.root.geometry("450x400")
+        self.root.geometry("450x600")
         self.root.resizable(True, False)
 
         self.vbox_layout = tk.Frame(self.root)
