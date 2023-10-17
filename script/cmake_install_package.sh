@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # @param: generator: 生成器名称(define: Unix Makefiles)
+# @param: sudo_password:
 cmakeInstallPackage() {
   if [[ $# == 0 ]]; then
     cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j$(nproc) && sudo cmake --build build --target install

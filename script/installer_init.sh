@@ -21,6 +21,7 @@ echo %{PWD} | sudo -S apt install -y \
                     rar \
                     unrar \
                     tree \
-                    wget
+                    wget \
+                    ninja-build
 
 green "necessary depend finished!"

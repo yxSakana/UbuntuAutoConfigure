@@ -11,7 +11,7 @@ installLibraryFromGithub() {
   name=$1 | sed 's/.*\/\([^/]*\)\.git/\1/'
 
   cd /tmp && \
-  git clone ${proxy_url}"$1" --depth=1 && cd ${name} && cmake_install_package && \
+  git clone ${proxy_url}"$1" --depth=1 && cd ${name} && cmakeInstallPackage "Ninja" && \
   cd ${current_dir} && \
   green "${name}Finished!"
 }

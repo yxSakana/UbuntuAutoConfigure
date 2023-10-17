@@ -12,5 +12,5 @@ cd openvino && \
 git submodule update --init --recursive && \
 chmod +x scripts/submodule_update_with_gitee.sh && \
 ./scripts/submodule_update_with_gitee.sh && \
-cmakeInstallPackage && \
+cmakeInstallPackage "Ninja" && \
 red "openvino Finished!"
