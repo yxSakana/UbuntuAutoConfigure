@@ -13,4 +13,5 @@ git submodule update --init --recursive && \
 chmod +x scripts/submodule_update_with_gitee.sh && \
 ./scripts/submodule_update_with_gitee.sh && \
 cmakeInstallPackage "Ninja" && \
-red "openvino Finished!"
+cd ${current_dir} && \
+grend "openvino Finished!"
