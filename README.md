@@ -65,7 +65,7 @@ src/app.py
 
 # 关于可扩展性
 
-只需要在 `src/data/data.py` 中的字典中添加对应 `key-value` 即可
+只需要在 `src/data/data.py` 中的字典中添加对应 `key-value` 即可(`key`为图形界面显示的名称, `value`是具体执行的脚本, 脚本添加在`script/<name>.sh`, 具体的`value为`run/<name>/.sh`)
 
 # 安装完成后的测试
 
