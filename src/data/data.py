@@ -24,6 +24,7 @@ OPTION_MAP_CMD = {
         "Realsense": "run/install_realsense.sh",
         "OpenCV": "run/install_opencv_package.sh",
         "kdrobotcpplibs": "run/install_kdrobotcpplibs.sh",
+        "hikCamera": "run/install_hikcamera.sh",
         "OpenVINO": "run/install_openvino.sh",
         "fmt": "run/install_fmt.sh",
         "glog": "run/install_glog.sh",

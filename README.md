@@ -15,24 +15,46 @@ Ubuntu 自动化环境配置
   - 安装 `spdlog`
   - 下载 `OpenCV` 包 (自动调换代理)
   - 安装 `KdrobotCppLibs`
+  - hikCamera
+  - OpenVINO
+  - fmt
+  - glog
+  - gtest
+  - matplotlib-cpp
+  - yaml-cpp
+  - ceres_solver
   - 安装完成后是否重启
 - aarch
-    - 自动安装 git、gcc、g++、vim、cmake、cmake-gui等
-    - 下载 `python`依赖
-    - 下载 `Qt && OpenCV` 依赖
-    - 安装 `Qt`
-    - 安装 `Clion`
-    - 安装 `PyCharm`
-    - 安装 `Realsense`
-    - 安装 `spdlog`
-    - 下载 `OpenCV` 包 (自动调换代理)
-    - 安装 `KdrobotCppLibs`
-    - 安装完成后是否重启
+  - 自动安装 git、gcc、g++、vim、cmake、cmake-gui等
+  - 下载 `python`依赖
+  - 下载 `Qt && OpenCV` 依赖
+  - 安装 `Qt`
+  - 安装 `Clion`
+  - 安装 `PyCharm`
+  - 安装 `Realsense`
+  - 安装 `spdlog`
+  - 下载 `OpenCV` 包 (自动调换代理)
+  - 安装 `KdrobotCppLibs`
+  - hikCamera
+  - OpenVINO
+  - fmt
+  - glog
+  - gtest
+  - matplotlib-cpp
+  - yaml-cpp
+  - 安装完成后是否重启
+
+对于后方有`select`选项的，可以提供库的源代码所在的目录
 
 # Usage
 
+如果没有 `python3-tk` 需要下载
 ```shell
-python3 src/app.py
+sudo apt install -y python3-tk
+```
+
+```shell
+src/app.py
 ```
 
 执行 python 脚本后
