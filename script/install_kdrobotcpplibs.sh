@@ -8,15 +8,14 @@ compileKdrobotcpplibs() {
   cd "$1" || (red "kdrobotcpplibs not fond" && exit)
   cmake -B build -G "Ninja" && cmake --build build -j$(nproc) && echo %{PWD} | sudo -S cmake --build build --target install -j$(nproc)
 
-  cd ../../
-#  rm -rf $1
   green "kdrobotcpplibs compiled!"
 }
 
 if (($# == 1))
 then
+  current_path=${PWD}
   green "Kdrobotlibs compile installing"
-  compileKdrobotcpplibs "$1"
+  cd current_path && compileKdrobotcpplibs "$1"
 else
   red "argv len == $#"
   red "argv[0] == $0"
