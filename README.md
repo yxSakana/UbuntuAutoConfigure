@@ -15,14 +15,15 @@ Ubuntu 自动化环境配置
   - 安装 `spdlog`
   - 下载 `OpenCV` 包 (自动调换代理)
   - 安装 `KdrobotCppLibs`
-  - hikCamera
-  - OpenVINO
-  - fmt
-  - glog
-  - gtest
-  - matplotlib-cpp
-  - yaml-cpp
-  - ceres_solver
+  - `hikCamera`
+  - `OpenVINO`
+  - `fmt`
+  - `gflags`
+  - `glog`
+  - `gtest`
+  - `matplotlib-cpp`
+  - `yaml-cpp`
+  - `ceres_solver`
   - 安装完成后是否重启
 - aarch
   - 自动安装 git、gcc、g++、vim、cmake、cmake-gui等
@@ -35,13 +36,15 @@ Ubuntu 自动化环境配置
   - 安装 `spdlog`
   - 下载 `OpenCV` 包 (自动调换代理)
   - 安装 `KdrobotCppLibs`
-  - hikCamera
-  - OpenVINO
-  - fmt
-  - glog
-  - gtest
-  - matplotlib-cpp
-  - yaml-cpp
+  - `hikCamera`
+  - `OpenVINO`
+  - `fmt`
+  - `gflags`
+  - `glog`
+  - `gtest`
+  - `matplotlib-cpp`
+  - `yaml-cpp`
+  - `ceres_solver`
   - 安装完成后是否重启
 
 对于后方有`select`选项的，可以提供库的源代码所在的目录(可选)，但是`KdrobotCppLibs`必须提供源代码所在目录
