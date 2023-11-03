@@ -28,6 +28,7 @@ OPTION_MAP_CMD = {
         "hikCamera": "run/install_hikcamera_x86.sh",
         "OpenVINO": "run/install_openvino.sh",
         "fmt": "run/install_fmt.sh",
+        "gflags": "run/install_gflags.sh",
         "glog": "run/install_glog.sh",
         "gtest": "run/install_gtest.sh",
         "matplotlib-cpp": "run/install_matplotlib.sh",
