@@ -6,12 +6,10 @@ compileKdrobotcpplibs() {
   green "kdrobotcpplibs compiling..."
 
   cd "$1" || (red "kdrobotcpplibs not fond" && exit)
-  mkdir build && cd build || (red "build not fond" && exit)
-  cmake ..
-  echo %{PWD} | sudo -S make install -j$(nproc)
+  cmake -B build -G "Ninja" && cmake --build build -j$(nproc) && echo %{PWD} | sudo -S cmake --build build --target install -j$(nproc)
 
   cd ../../
-  rm -rf $1
+#  rm -rf $1
   green "kdrobotcpplibs compiled!"
 }
 
