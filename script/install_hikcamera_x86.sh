@@ -9,4 +9,4 @@ unzip hik_camera.zip
 tar -xzvf MvCamCtrlSDK_Runtime-4.1.2_x86_64_20231011.tar.gz
 cd "MvCamCtrlSDK_Runtime-4.1.2_x86_64_20231011"
 sudo ./setup.sh
-cd current_path && blue "hik camera is Ok"
+cd ${current_path} && blue "hik camera is Ok"

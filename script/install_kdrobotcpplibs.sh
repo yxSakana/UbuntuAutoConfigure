@@ -15,7 +15,7 @@ if (($# == 1))
 then
   current_path=${PWD}
   green "Kdrobotlibs compile installing"
-  cd current_path && compileKdrobotcpplibs "$1"
+  cd {current_path} && compileKdrobotcpplibs "$1"
 else
   red "argv len == $#"
   red "argv[0] == $0"
