@@ -22,6 +22,7 @@ echo %{PWD} | sudo -S apt install -y \
                     unrar \
                     tree \
                     wget \
-                    ninja-build
+                    ninja-build \
+                    libssl-dev
 
 green "necessary depend finished!"

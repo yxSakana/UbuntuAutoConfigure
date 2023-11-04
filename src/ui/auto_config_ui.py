@@ -111,8 +111,6 @@ class AutoConfigUi(object):
                 cmds.append(OPTION_MAP_CMD[self.architecture][checkbutton.objName()].format(pwd=pwd))
 
         # 为所有文件添加密码
-
-
         script_files = os.listdir("script/")
         for script_file in script_files:
             if os.path.isfile("script/" + script_file):
