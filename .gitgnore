@@ -1,2 +1,4 @@
 .idea/
 cmake-build*/
+run/
+auto_config.sh
