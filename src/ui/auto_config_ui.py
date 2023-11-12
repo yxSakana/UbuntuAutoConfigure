@@ -117,7 +117,7 @@ class AutoConfigUi(object):
             if os.path.isfile("script/" + script_file):
                 with open("script/" + script_file, "r") as file:
                     content = file.read()
-                content = re.sub("echo %\\{PWD}", f"echo {pwd}", content)
+                content = re.sub("%\\{PWD}", f"{pwd}", content)
                 with open("run/" + script_file, "w") as file:
                     file.write(content)
         subprocess.run("chmod +x script/*", shell=True)
