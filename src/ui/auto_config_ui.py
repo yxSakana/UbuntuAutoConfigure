@@ -108,7 +108,8 @@ class AutoConfigUi(object):
         cmds: List = [RunScript[self.architecture][checkbutton.objName()]
                       for checkbutton in self.all_checkbutton
                       if checkbutton.status and (checkbutton.objName() in RunScript[self.architecture].keys())]
-        install_github_repositories_str = re.sub("[\\[,\\]]", '"', str(install_github_repositories))
+        install_github_repositories_str = re.sub("[\\[\\]]", '"', str(install_github_repositories))
+        install_github_repositories_str = re.sub("[,']", "", install_github_repositories_str)
         cmds.append(f"{InstallGithubRepositoriesLibraryScript} {install_github_repositories_str}")
         # 为所有文件添加密码
         script_files = os.listdir("script/")
@@ -119,6 +120,8 @@ class AutoConfigUi(object):
                 content = re.sub("echo %\\{PWD}", f"echo {pwd}", content)
                 with open("run/" + script_file, "w") as file:
                     file.write(content)
+        subprocess.run("chmod +x script/*", shell=True)
+        subprocess.run("chmod +x script/lib/*", shell=True)
         subprocess.run("chmod +x run/*", shell=True)
         # 将命令写入文件 (或执行命令)
         if self.is_in_script.status:

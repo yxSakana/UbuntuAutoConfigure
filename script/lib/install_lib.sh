@@ -35,7 +35,6 @@ if [ ! -v __INSTALL_LIB_SH__ ]; then
         git clone ${git_repositories_url} --depth=1
       fi
     fi
-    log_info "git_repositories_url: ${git_repositories_url};"
     cd ${name} && cmakeInstallPackage "Ninja" && \
     cd ${current_dir} && \
     log_info "${name} Finished!"
@@ -45,10 +44,14 @@ if [ ! -v __INSTALL_LIB_SH__ ]; then
   # @param: List of library names
   # @param: need proxy
   installLibrariesFromGithub() {
-    library_names=$1
-    is_need_proxy=$2
+    local library_names=($1)
+    local is_need_proxy=$2
 
-    for library_name in "${library_names}"; do
+    log_debug "library names: ${library_names[*]}"
+    log_debug "is need proxy: ${is_need_proxy}"
+
+    for library_name in ${library_names[*]}; do
+      log_debug "current library name: ${library_name}"
       installLibraryFromGithub ${library_name} ${is_need_proxy}
     done
   }

@@ -2,4 +2,4 @@
 
 . script/lib/install_lib.sh
 
-installLibrariesFromGithub $@ "false"
+installLibrariesFromGithub "${libraries[*]}" "false"

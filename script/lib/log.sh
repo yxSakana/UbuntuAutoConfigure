@@ -3,13 +3,14 @@
 if [ ! -v _LOG_SH__ ]; then
   __COLOR_CONFIG_SH__="__COLOR_CONFIG_SH__"
   # define color
-  readonly COLOR_RED='\033[31m'
-  readonly COLOR_GREEN='\033[32m'
-  readonly COLOR_YELLOW='\033[33m'
-  readonly COLOR_BLUE='\033[34m'
-  readonly COLOR_MAGENTA='\033[35m'
-  readonly COLOR_CYAN='\033[36m'
-  readonly COLOR_WHITE='\033[37m'
+  readonly COLOR_GREY='\033[90m'
+  readonly COLOR_RED='\033[91m'
+  readonly COLOR_GREEN='\033[92m'
+  readonly COLOR_YELLOW='\033[93m'
+  readonly COLOR_BLUE='\033[94m'
+  readonly COLOR_MAGENTA='\033[95m'
+  readonly COLOR_CYAN='\033[96m'
+  readonly COLOR_WHITE='\033[97m'
 
   # define style
   readonly STYLE_BOLD='\033[1m'
@@ -20,6 +21,7 @@ if [ ! -v _LOG_SH__ ]; then
 
   # function
   # logger level
+  log_debug() { echo -e "${COLOR_GREY}  [DEBUG] $1${RESET}"; }
   log_info() { echo -e "${COLOR_GREEN}  [INFO] $1${RESET}"; }
   log_warning() { echo -e "${COLOR_YELLOW}  [WARNING] $1${RESET}"; }
   log_error() { echo -e "${COLOR_RED}  [ERROR] $1${RESET}"; }
