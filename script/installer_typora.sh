@@ -2,7 +2,7 @@
 # @brief: install typora
 # @time: 2023-6-7 13:00
 
-. script/color_config.sh
+. script/lib/log.sh
 
 echo "typora installing..."
 

@@ -1,24 +1,24 @@
 #!/bin/bash
 
-. script/color_config.sh
+. script/lib/log.sh
 
 compileKdrobotcpplibs() {
-  green "kdrobotcpplibs compiling..."
+  log_info "kdrobotcpplibs compiling..."
 
   cd "$1" || (red "kdrobotcpplibs not fond" && exit)
   cmake -B build -G "Ninja" && cmake --build build -j$(nproc) && echo %{PWD} | sudo -S cmake --build build --target install -j$(nproc)
 
-  green "kdrobotcpplibs compiled!"
+  log_info "kdrobotcpplibs compiled!"
 }
 
 if (($# == 1))
 then
   current_path=${PWD}
-  green "Kdrobotlibs compile installing"
+  log_info "Kdrobotlibs compile installing"
   cd ${current_path} && compileKdrobotcpplibs "$1"
 else
-  red "argv len == $#"
-  red "argv[0] == $0"
-  red "argv[1] == $1"
-  red "input kdrobotlibs path"
+  log_error "argv len == $#"
+  log_error "argv[0] == $0"
+  log_error "argv[1] == $1"
+  log_error "input kdrobotlibs path"
 fi

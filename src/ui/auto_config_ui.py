@@ -18,12 +18,14 @@
 import os
 import re
 import sys
+import re
 import platform
 import subprocess
 import tkinter as tk
 import tkinter.messagebox
 from typing import Sequence, List
 
+from parser import data_parser
 from data.data import *
 from ui.pwd_entry import PasswordEntry
 from ui.checkbutton import CheckbuttonWidget
@@ -36,7 +38,7 @@ class AutoConfigUi(object):
         self.architecture = platform.machine()
 
         try:
-            self.support_options: Sequence[str] = list(OPTION_MAP_CMD[self.architecture].keys())  # 所有支持的选项
+            self.support_options: Sequence[str] = list(SupportOptions[self.architecture])  # 所有支持的选项
         except KeyError:
             print("不支持的架构: ", self.architecture)
             sys.exit(1)
@@ -44,19 +46,19 @@ class AutoConfigUi(object):
         self.selected_options: List[str] = []  # 已选择的选项
         self.all_checkbutton: List[CheckbuttonWidget] = []  # 所有多选框对象
         self.need_file_path_widgets: List[SelectPathWidget] = []  # 所有需要路径的组建
-
+        # window settings
         self.root: tk.Tk = tk.Tk()
         self.root.title("Linux Auto Config(Vision)")
         self.root.geometry("450x680")
         self.root.resizable(True, False)
-
+        # layout settings
         self.vbox_layout = tk.Frame(self.root)
         self.vbox_layout.pack()
         self.grid_layout = tk.Frame(self.root)
         self.grid_layout.pack()
         self.pb_layout = tk.Frame(self.root)
         self.pb_layout.pack()
-
+        #
         self.button = None
         self.is_in_script = CheckbuttonWidget(self.root, "是否在 python 脚本中执行", status=False, name="is_in_script")
         self.is_in_script.checkbutton.pack()
@@ -64,14 +66,12 @@ class AutoConfigUi(object):
         self.initUi()
 
     def initUi(self) -> None:
-
         row: int = 0
-
         # 所有选项
         for option in self.support_options:
             # 需要给出路径的 package
-            if option in NEED_FILE_PATH:
-                optional = False if option in MUST_NEED_FILE_PATH else True  # 是否必须给出路径
+            if option in NeedFilePath:
+                optional = False if option in MustNeedFilePath else True  # 是否必须给出路径
                 select_widget = SelectPathWidget(self.grid_layout, name=option, text=option, optional=optional)
                 select_widget.checkbutton.checkbutton.grid(row=row, column=0)
                 select_widget.label.grid(row=row, column=1)
@@ -97,19 +97,19 @@ class AutoConfigUi(object):
         PasswordEntry(self.root, "输入 root 密码", self.runCmds)
 
     def runCmds(self, pwd: str) -> None:
-        cmds: List = []
-
-        # 判断是否给出路径
-        for widget in self.need_file_path_widgets:
-            package_path = widget.label.cget("text")
-            if not package_path == "None":
-                OPTION_MAP_CMD[self.architecture][widget.name] += " " + package_path
-
-        # 判断所有已经选择的选项
-        for checkbutton in self.all_checkbutton:
-            if checkbutton.status:
-                cmds.append(OPTION_MAP_CMD[self.architecture][checkbutton.objName()].format(pwd=pwd))
-
+        # 为所有需要包路径的库添加给出路径
+        data_parser.add_package_path(self.need_file_path_widgets)
+        # 设置要运行的脚本
+        install_github_repositories: List = [
+            GithubRepositories.get(checkbutton.objName())
+            for checkbutton in self.all_checkbutton
+            if checkbutton.status and (checkbutton.objName() in GithubRepositories.keys())
+        ]
+        cmds: List = [RunScript[self.architecture][checkbutton.objName()]
+                      for checkbutton in self.all_checkbutton
+                      if checkbutton.status and (checkbutton.objName() in RunScript[self.architecture].keys())]
+        install_github_repositories_str = re.sub("[\\[,\\]]", '"', str(install_github_repositories))
+        cmds.append(f"{InstallGithubRepositoriesLibraryScript} {install_github_repositories_str}")
         # 为所有文件添加密码
         script_files = os.listdir("script/")
         for script_file in script_files:
@@ -119,10 +119,8 @@ class AutoConfigUi(object):
                 content = re.sub("echo %\\{PWD}", f"echo {pwd}", content)
                 with open("run/" + script_file, "w") as file:
                     file.write(content)
-
         subprocess.run("chmod +x run/*", shell=True)
-
-        # 执行命令 / 将命令写入文件
+        # 将命令写入文件 (或执行命令)
         if self.is_in_script.status:
             # run cmd
             for cmd in cmds:
@@ -136,7 +134,7 @@ class AutoConfigUi(object):
             for cmd in cmds:
                 with open("auto_config.sh", "a") as file:
                     if ".sh" in cmd:
-                        file.write(". " + cmd + "\n")
+                        file.write(f". run/{cmd}\n")
                     else:
                         file.write(cmd + "\n")
             subprocess.run("chmod +x auto_config.sh", shell=True)

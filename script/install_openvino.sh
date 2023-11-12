@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. script/color_config.sh
+. script/lib/log.sh
 . script/cmake_install_package.sh
 
 proxy_url="https://ghproxy.com/"
@@ -14,4 +14,4 @@ chmod +x scripts/submodule_update_with_gitee.sh && \
 ./scripts/submodule_update_with_gitee.sh && \
 cmakeInstallPackage "Ninja" && \
 cd ${current_dir} && \
-grend "openvino Finished!"
+log_info "openvino Finished!"

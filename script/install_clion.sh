@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. script/color_config.sh
+. script/lib/log.sh
 
 clion_vision="2023.1.3"
 clion_url="https://download.jetbrains.com/cpp/CLion-${clion_vision}.tar.gz"
@@ -8,15 +8,15 @@ clion_url="https://download.jetbrains.com/cpp/CLion-${clion_vision}.tar.gz"
 download_dir="_tmp"
 mkdir -p "${download_dir}"
 
-green "clion downloading..."
+log_info "clion downloading..."
 
 if [ ! -e "${download_dir}/clion-${clion_vision}.tar.gz" ]
 then
     wget -O "${download_dir}/clion-${clion_vision}.tar.gz" "${clion_url}"
 fi
 
-green "Download finished!"
-green "tar -xzvf ..."
+log_info "Download finished!"
+log_info "tar -xzvf ..."
 
 tar -xzvf "${download_dir}/clion-${clion_vision}.tar.gz"
 

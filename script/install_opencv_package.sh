@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. script/lib/log.sh
 . script/color_config.sh
 
 proxy_url="https://ghproxy.com/"
@@ -7,11 +8,11 @@ current_dir=$PWD
 is_has_opencv="False"
 is_has_opencv_contrib="False"
 
-green "Download OpenCV"
+log_info "Download OpenCV"
 
 cd package
 if [ ! -e ${PWD}/opencv ]; then
-  git clone ${proxy_url}https://github.com/opencv/opencv.git && is_has_opencv="True"
+  git clone ${proxy_url}https://github.com/opencv/opencv.git --depth=1 && is_has_opencv="True"
 else
   is_has_opencv="True"
 fi
@@ -25,9 +26,9 @@ fi
 if [ $is_has_opencv == "True" ] && [ $is_has_opencv_contrib == "True" ]; then
   chmod +x ../src/utils/OpencvProxyRex.py && \
   ../src/utils/OpencvProxyRex.py ${PWD}/opencv ${PWD}/opencv_contrib && \
-  green "Download OpenCV Finished!" && cd .. || red "OpenCV Download Failed!"
+  log_info "Download OpenCV Finished!" && cd .. || log_error "OpenCV Download Failed!"
 else
-  red "OpenCV Download Failed!(文件异常)"
+  log_error "OpenCV Download Failed!(文件异常)"
 fi
 
 cd ${current_dir}

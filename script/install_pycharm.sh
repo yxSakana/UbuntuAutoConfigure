@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. script/color_config.sh
+. script/lib/log.sh
 
 pycharm_vision="2023.1.2"
 pycharm_url="https://download.jetbrains.com/python/pycharm-professional-${pycharm_vision}.tar.gz"
@@ -13,8 +13,8 @@ then
    wget -O "${download_dir}/pycharm-${pycharm_vision}.tar.gz" "${pycharm_url}"
 fi
 
-green "Download finished!"
-green "tar -xzvf ..."
+log_info "Download finished!"
+log_info "tar -xzvf ..."
 
 tar -xzvf "${download_dir}/pycharm-${pycharm_vision}.tar.gz"
 

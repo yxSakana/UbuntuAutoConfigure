@@ -8,5 +8,5 @@ wget -O "hik_camera.zip" "https://www.hikrobotics.com/cn2/source/support/softwar
 unzip hik_camera.zip
 tar -xzvf MvCamCtrlSDK_Runtime-4.1.2_x86_64_20231011.tar.gz
 cd "MvCamCtrlSDK_Runtime-4.1.2_x86_64_20231011"
-sudo ./setup.sh
+echo %{PWD} | sudo -S ./setup.sh
 cd ${current_path} && blue "hik camera is Ok"

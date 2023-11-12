@@ -2,13 +2,13 @@
 
 # @brief: time synchronization
 
-. script/color_config.sh
+. script/lib/log.sh
 
-green "time synchronization..."
-green "(双系统时间同步设置中...)"
+log_info "time synchronization..."
+log_info "(双系统时间同步设置中...)"
 
 echo %{PWD} | sudo -S apt install -y ntpdate
 echo %{PWD} | sudo -S ntpdate time.windows.com
 echo %{PWD} | sudo -S hwclock --localtime --systohc
 
-green "time synchronization finished!"
+log_info "time synchronization finished!"

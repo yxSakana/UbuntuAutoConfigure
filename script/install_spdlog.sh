@@ -1,12 +1,12 @@
 #!/bin/bash
 # @brief: spdlog
 
-. script/color_config.sh
+. script/lib/log.sh
 
 proxy_url="https://ghproxy.com/"
 current_dir=$PWD
 
-green "spdlog compiling..."
+log_info "spdlog compiling..."
 
 if (( $# == 1 ))
 then
@@ -23,6 +23,6 @@ cd $dir_path || (echo "spdlog not fond" && exit)
 
 cmake -B build && cmake --build build -j$(nproc) && echo %{PWD} | sudo -S cmake --build build --target install -j$(nproc) && \
 cd ../ && rm -rf spdlog && \
-green "spdlog compiled!" || red "Failed: spdlog compie"
+log_info "spdlog compiled!" || log_error "Failed: spdlog compie"
 
 cd ${current_dir}
