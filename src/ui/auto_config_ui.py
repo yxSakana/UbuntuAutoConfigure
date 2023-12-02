@@ -25,7 +25,7 @@ import tkinter as tk
 import tkinter.messagebox
 from typing import Sequence, List
 
-from parser import data_parser
+from data_parser import data_parser
 from data.data import *
 from ui.pwd_entry import PasswordEntry
 from ui.checkbutton import CheckbuttonWidget

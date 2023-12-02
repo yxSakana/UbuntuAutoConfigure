@@ -18,7 +18,6 @@ MustNeedFilePath: List = ["kdrobotcpplibs"]
 
 GithubRepositories: Dict = {
     "fmt": "https://github.com/fmtlib/fmt.git",
-    "gflags": "https://github.com/gflags/gflags.git",
     "glog": "https://github.com/google/glog.git",
     "gtest": "https://github.com/google/googletest.git",
     "yaml-cpp": "https://github.com/jbeder/yaml-cpp.git",
@@ -42,6 +41,7 @@ RunScript: Dict = {
         "OpenCV": "install_opencv_package.sh",
         "kdrobotcpplibs": "install_kdrobotcpplibs.sh",
         "hikCamera": "install_hikcamera_x86.sh",
+        "gflags": "install_gflags.sh",
         "OpenVINO": "install_openvino.sh",
     },
     "aarch64": {
@@ -56,6 +56,7 @@ RunScript: Dict = {
         "Realsense": "install_realsense.sh",
         "OpenCV": "install_opencv_package.sh",
         "kdrobotcpplibs": "install_kdrobotcpplibs.sh",
+        "gflags": "install_gflags.sh",
         "OpenVINO": "install_openvino.sh",
     }
 }

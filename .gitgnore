@@ -1,4 +1,5 @@
 .idea/
 cmake-build*/
 run/
+__pycache__/
 auto_config.sh

@@ -12,13 +12,13 @@ log_info "Download OpenCV"
 
 cd package
 if [ ! -e ${PWD}/opencv ]; then
-  git clone ${proxy_url}https://github.com/opencv/opencv.git --depth=1 && is_has_opencv="True"
+  git clone https://github.com/opencv/opencv.git --depth=1 && is_has_opencv="True"
 else
   is_has_opencv="True"
 fi
 
 if [ ! -e ${PWD}/opencv_contrib ]; then
-  git clone ${proxy_url}https://github.com/opencv/opencv_contrib.git && is_has_opencv_contrib="True"
+  git clone https://github.com/opencv/opencv_contrib.git --depth=1 && is_has_opencv_contrib="True"
 else
   is_has_opencv_contrib="True"
 fi

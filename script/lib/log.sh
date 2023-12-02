@@ -24,11 +24,11 @@ if [ ! -v _LOG_SH__ ]; then
 
   # function
   # logger level
-  log_debug() { echo -e "${COLOR_GREY}  [DEBUG] $1${RESET}"; }
-  log_info() { echo -e "${COLOR_GREEN}  [INFO] $1${RESET}"; }
-  log_warning() { echo -e "${COLOR_YELLOW}  [WARNING] $1${RESET}"; }
-  log_error() { echo -e "${STYLE_BOLD}${COLOR_RED}  [ERROR] $1${RESET}"; }
-  log_critical() { echo -e "${COLOR_FULL_RED}  [CRITICAL] $1${RESET}"; }
+  log_debug() { echo -e "${COLOR_GREY}  [DEBUG] $1${RESET}" | tee -a log_debug.log; }
+  log_info() { echo -e "${COLOR_GREEN}  [INFO] $1${RESET}" | tee -a log_info.log; }
+  log_warning() { echo -e "${COLOR_YELLOW}  [WARNING] $1${RESET}" | tee -a log_warning.log; }
+  log_error() { echo -e "${STYLE_BOLD}${COLOR_RED}  [ERROR] $1${RESET}" | tee -a log_error.log; }
+  log_critical() { echo -e "${COLOR_FULL_RED}  [CRITICAL] $1${RESET}" | tee -a log_critical.log; }
 
   blue() { echo -e "${COLOR_BLUE}$1${RESET}"; }
   magenta() { echo -e "${COLOR_MAGENTA}$1${RESET}"; }
