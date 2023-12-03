@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. script/color_config.sh
+. lib/log.sh
 
 current_path=${PWD}
 cd "/tmp" && mkdir "hik_camera" && cd "hik_camera"
@@ -9,4 +9,4 @@ unzip hik_camera.zip
 tar -xzvf MVS-2.1.2_x86_64_20231011.tar.gz
 cd "MVS-2.1.2_x86_64_20231011"
 echo %{PWD} | sudo -S ./setup.sh
-cd ${current_path} && blue "hik camera is Ok"
+cd ${current_path} && log_info "hik camera is Ok"
