@@ -1,7 +1,6 @@
 #!/bin/bash
 
 . script/lib/log.sh
-. script/color_config.sh
 
 proxy_url="https://ghproxy.com/"
 current_dir=$PWD

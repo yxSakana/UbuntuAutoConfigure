@@ -12,9 +12,9 @@ from typing import Dict, List
 
 InstallGithubRepositoriesLibraryScript: str = "install_github_repositories_library.sh"
 
-NeedFilePath: List = ["Realsense", "spdlog", "kdrobotcpplibs"]
+NeedFilePath: List = []
 
-MustNeedFilePath: List = ["kdrobotcpplibs"]
+MustNeedFilePath: List = []
 
 GithubRepositories: Dict = {
     "fmt": "https://github.com/fmtlib/fmt.git",
@@ -25,6 +25,7 @@ GithubRepositories: Dict = {
     "ceres_solver": "https://github.com/ceres-solver/ceres-solver.git",
     "nlohmann-json": "https://github.com/nlohmann/json.git",
     "cpp-httplib": "https://github.com/yhirose/cpp-httplib.git",
+    "kdrobotcpplibs": "https://github.com/LX050724/KdrobotCppLibs.git"
 }
 RunScript: Dict = {
     "x86_64": {
