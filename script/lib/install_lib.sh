@@ -54,7 +54,7 @@ if [ ! -v __INSTALL_LIB_SH__ ]; then
 
     log_debug "library names: ${library_names[*]}"
     log_debug "is need proxy: ${is_need_proxy}"
-    log_debug "password: ${password}"
+#    log_debug "password: ${password}"
 
     for library_name in ${library_names[*]}; do
       log_debug "current library name: ${library_name}"
