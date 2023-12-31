@@ -17,6 +17,7 @@ NeedFilePath: List = []
 MustNeedFilePath: List = []
 
 GithubRepositories: Dict = {
+    "spdlog": "https://github.com/gabime/spdlog.git",
     "fmt": "https://github.com/fmtlib/fmt.git",
     "glog": "https://github.com/google/glog.git",
     "gtest": "https://github.com/google/googletest.git",
@@ -37,10 +38,8 @@ RunScript: Dict = {
         "Clion": "install_clion.sh",
         "PyCharm": "install_pycharm.sh",
         "cmake-3.27.7": "install_cmake_3.27.sh",
-        "spdlog": "install_spdlog.sh",
         "Realsense": "install_realsense.sh",
         "OpenCV": "install_opencv_package.sh",
-        "kdrobotcpplibs": "install_kdrobotcpplibs.sh",
         "hikCamera": "install_hikcamera_x86.sh",
         "gflags": "install_gflags.sh",
         "OpenVINO": "install_openvino.sh",
@@ -53,10 +52,8 @@ RunScript: Dict = {
         "Clion": "install_clion.sh",
         "PyCharm": "install_pycharm.sh",
         "cmake-3.27.7": "install_cmake_3.27.sh",
-        "spdlog": "install_spdlog.sh",
         "Realsense": "install_realsense.sh",
         "OpenCV": "install_opencv_package.sh",
-        "kdrobotcpplibs": "install_kdrobotcpplibs.sh",
         "gflags": "install_gflags.sh",
         "OpenVINO": "install_openvino.sh",
     }

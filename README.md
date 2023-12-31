@@ -24,7 +24,8 @@ Ubuntu 自动化环境配置
   - `matplotlib-cpp`
   - `yaml-cpp`
   - `ceres_solver`
-  - 安装完成后是否重启
+  - `nlohmann-json`
+  - `cpp-httplib`
 - aarch
   - 自动安装 git、gcc、g++、vim、cmake、cmake-gui等
   - 下载 `python`依赖
@@ -45,9 +46,10 @@ Ubuntu 自动化环境配置
   - `matplotlib-cpp`
   - `yaml-cpp`
   - `ceres_solver`
-  - 安装完成后是否重启
+  - `nlohmann-json`
+  - `cpp-httplib`
 
-对于后方有`select`选项的，可以提供库的源代码所在的目录(可选)，但是`KdrobotCppLibs`必须提供源代码所在目录
+对于后方有`select`选项的，可以提供库的源代码所在的目录(可选)
 
 # Usage
 
@@ -57,7 +59,7 @@ sudo apt install -y python3-tk
 ```
 
 ```shell
-src/app.py
+src/app.py  # 运行程序
 ```
 
 执行 python 脚本后
@@ -71,6 +73,8 @@ src/app.py
 只需要在 `src/data/data.py` 中的字典中添加对应 `key-value` 即可(`key`为图形界面显示的名称, `value`是具体执行的脚本, 脚本添加在`script/<name>.sh`, 具体的`value`为`run/<name>.sh`)
 
 # 安装完成后的测试
+
+测试代码全部在`test`文件夹内, 涵盖了`Qt`、`OpenCV`、`spdlog`、`Realsense2`、`kdlib`, 如果初次接触某库可起到一定参考作用
 
 ```shell
 chmod +x script/compile/*.sh
