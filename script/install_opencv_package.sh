@@ -23,8 +23,8 @@ else
 fi
 
 if [ $is_has_opencv == "True" ] && [ $is_has_opencv_contrib == "True" ]; then
-  chmod +x ../src/utils/OpencvProxyRex.py && \
-  ../src/utils/OpencvProxyRex.py ${PWD}/opencv ${PWD}/opencv_contrib && \
+#   chmod +x ../src/utils/OpencvProxyRex.py && \
+#   ../src/utils/OpencvProxyRex.py ${PWD}/opencv ${PWD}/opencv_contrib && \
   log_info "Download OpenCV Finished!" && cd .. || log_error "OpenCV Download Failed!"
 else
   log_error "OpenCV Download Failed!(文件异常)"
