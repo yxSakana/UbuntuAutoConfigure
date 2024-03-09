@@ -9,4 +9,9 @@ unzip hik_camera.zip
 tar -xzvf MVS-2.1.2_x86_64_20231011.tar.gz
 cd "MVS-2.1.2_x86_64_20231011"
 echo %{PWD} | sudo -S ./setup.sh
+if [ -d /opt/MVS/lib/64/ ]; then
+  echo %{PWD} | sudo -S cp /opt/MVS/lib/64/* /usr/lib/
+else
+  log_error "hik camera failed! no found '/opt/MVS/lib/64'"
+fi
 cd ${current_path} && log_info "hik camera is Ok"

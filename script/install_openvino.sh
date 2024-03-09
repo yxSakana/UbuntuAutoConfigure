@@ -7,7 +7,9 @@ proxy_url="https://ghproxy.com/"
 current_dir=$PWD
 
 cd /tmp
-git clone https://github.com/openvinotoolkit/openvino.git --depth=1 && \
+if [ ! -d openvino ]; then
+  git clone https://github.com/openvinotoolkit/openvino.git --depth=1
+fi
 cd openvino && \
 git submodule update --init --recursive && \
 chmod +x scripts/submodule_update_with_gitee.sh && \
