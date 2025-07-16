@@ -1,0 +1,31 @@
+- 工具
+  - 搜狗
+- 环境
+  - go
+  - c++
+  - git账户
+  - docker
+- IDE
+  - goland
+  - clion
+- 终端
+  - zsh
+  - oh-my-zsh
+  - tabby
+  - nvim
+  - neofetch
+  - exa/lsd
+  - bat
+  - btop
+  - starship
+  - fd/fd-find
+  - fzf
+  - ranger
+  - duf
+  - ncdu
+  - ripgrep
+  - 
+  - gdebi
+  - lf
+  - zoxide
+  - dust

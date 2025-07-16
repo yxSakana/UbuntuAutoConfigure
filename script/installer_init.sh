@@ -15,6 +15,7 @@ echo %{PWD} | sudo -S apt install -y \
                     cmake-gui \
                     g++ \
                     gcc \
+                    zsh \
 		                python3-pip \
                     zip \
                     unzip \
@@ -22,6 +23,8 @@ echo %{PWD} | sudo -S apt install -y \
                     unrar \
                     tree \
                     wget \
+                    curl \
+                    neofetch \
                     ninja-build \
                     libssl-dev
 
