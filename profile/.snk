@@ -1,0 +1,45 @@
+# alias
+. /home/snk/config/profile/.alias
+export SKN_HOME=/home/snk
+
+# poetry
+export PATH=/home/snk/.local/bin${PATH:+:${PATH}}
+
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+export PATH=/home/snk/go/bin${PATH:+:${PATH}}
+
+# JDK 21
+export JAVA_HOME=/home/snk/jdk-21.0.5
+export PATH=${JAVA_HOME}/bin${PATH:+:${PATH}}
+
+# Ruby Gem 
+# Install Ruby Gems to ~/gems
+export GEM_HOME=/home/snk/gems
+export PATH=${GEM_HOME}/bin${PATH:+:${PATH}}
+
+# Qt 6.7
+export QT_HOME=/opt/Qt6.7/6.7.2
+export PATH=${QT_HOME}/gcc_64/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=${QT_HOME}/gcc_64/lib${LD_LIBRARY_PATH:+:${PATH}}
+export CMAKE_PREFIX_PATH=${QT_HOME}/gcc_64/lib/cmake${CMAKE_PREFIX_PATH:+:${CMAKE_PREFIX_PATH}}
+
+# proxy
+ENABLE_PROXY=1
+export http_proxy="http://127.0.0.1:7890" 
+export https_proxy="http://127.0.0.1:7890" 
+export HTTP_PROXY="http://127.0.0.1:7890"
+export HTTPS_PROXY="http://127.0.0.1:7890"
+
+# clion && pycharm
+export PATH=/home/snk/software/clion-2024.2.1/bin${PATH:+:${PATH}}
+export PATH=/home/snk/software/pycharm-2024.2.1/bin${PATH:+:${PATH}}
+
+# etcd
+export PATH=/home/snk/software/etcd${PATH:+:${PATH}}
+
+# fzf
+export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_DEFAULT_OPTS_FILE=${SKN_HOME}/config/profile/.fzfrc
+

@@ -1,0 +1,6 @@
+--style=full
+#--preview='fzf-preview.sh {}'
+--preview='nvim {}'
+--bind='focus:transform-header:file --brief {}'
+--bind 'enter:become(nvim {})'
+
