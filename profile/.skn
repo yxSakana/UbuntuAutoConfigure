@@ -1,6 +1,6 @@
 # alias
-. /home/snk/config/profile/.alias
-export SKN_HOME=/home/snk
+. /home/snk/.config/.alias
+export SKN_HOME=/home/skn
 
 # poetry
 export PATH=/home/snk/.local/bin${PATH:+:${PATH}}

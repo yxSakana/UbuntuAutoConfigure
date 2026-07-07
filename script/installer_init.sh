@@ -7,8 +7,9 @@
 log_info "necessary depend installing..."
 log_info "(正在下载必要依赖...)"
 
-echo %{PWD} | sudo -S apt update
-echo %{PWD} | sudo -S apt install -y \
+sudo -v
+sudo apt update
+sudo apt install -y \
                     git \
                     vim \
                     cmake \
@@ -16,7 +17,7 @@ echo %{PWD} | sudo -S apt install -y \
                     g++ \
                     gcc \
                     zsh \
-		                python3-pip \
+		            python3-pip \
                     zip \
                     unzip \
                     rar \

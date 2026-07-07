@@ -3,28 +3,6 @@ alias vim="nvim"
 alias ls="lsd"
 alias cat="bat"
 
-alias ec="nvim ~/config/profile/.snk"
-alias eca="nvim ~/config/profile/.alias"
+alias ec="nvim ~/.config/.snk"
+alias eca="nvim ~/config/.alias"
 alias ez="nvim ~/.zshrc"
-
-# crictl
-alias ccl="sudo crictl"
-
-# snote
-snote() {
-  root_dir="/home/snk/snote"
-  if [ ! -d ${root_dir} ]; then
-    mkdir -p root_dir
-  fi
-
-  nvim ${root_dir}/$1
-}
-
-mdcp() {
-  if [ -z "$1" ]; then
-    echo "Usage: mdcp <pkg_name>"
-    return 1
-  fi
-  mkdir -p "$1/include" "$1/src"
-}
-
