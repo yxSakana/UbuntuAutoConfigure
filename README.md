@@ -1,3 +1,5 @@
+
+
 # illustrate
 
 Ubuntu 自动化环境配置
@@ -59,7 +61,7 @@ sudo apt install -y python3-tk
 ```
 
 ```shell
-src/app.py  # 运行程序
+python3 src/app.py  # 运行程序
 ```
 
 执行 python 脚本后
