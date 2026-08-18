@@ -3,6 +3,6 @@ alias vim="nvim"
 alias ls="lsd"
 alias cat="bat"
 
-alias ec="nvim ~/.config/.snk"
-alias eca="nvim ~/config/.alias"
+alias ec="nvim ~/.config/.skn_profile"
+alias eca="nvim ~/config/.alias_profile"
 alias ez="nvim ~/.zshrc"

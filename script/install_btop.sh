@@ -6,6 +6,7 @@ log_info "installing btop..."
 
 sudo -v
 git clone -b v1.4.4 --depth 1 https://github.com/aristocratos/btop.git /tmp/btop
-cd /tmp/btop && make && sudo make install
+pushd /tmp/btop && make && sudo make install
 
+popd
 log_info "btop compile!"
